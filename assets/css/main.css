@@ -2593,11 +2593,11 @@ input, select, textarea {
 		justify-content: space-between;
 		background-color: #1f1815;
 		background-attachment: scroll,								scroll;
-		background-image: url("../../images/MacG\ Campus\ River\ Square.jpg");
+		background-image: url("images/overlay.png"), url("../../images/MacG\ Campus\ River\ Square.jpg");
 		background-position: top left,							top left;
 		background-repeat: repeat,								no-repeat;
 		background-size: auto,								150%;
-		color: rgba(255, 255, 255, 0.5);
+		color: rgb(255, 255, 255, 0.85);
 		height: 100%;
 		left: 0;
 		padding: 8em 4em;
@@ -2650,11 +2650,11 @@ input, select, textarea {
 	}
 
 		#footer .icons a {
-			color: rgba(255, 255, 255, 0.4);
+			color: rgba(255, 255, 255, 0.85);
 		}
 
 	#footer .copyright {
-		color: rgba(255, 255, 255, 0.4);
+		color: rgba(255, 255, 255, 0.85);
 		font-size: 0.8em;
 		list-style: none;
 		margin: 1em 0 0 0;
@@ -2662,7 +2662,7 @@ input, select, textarea {
 	}
 
 		#footer .copyright li {
-			border-left: solid 1px rgba(255, 255, 255, 0.25);
+			border-left: solid 1px rgba(255, 255, 255, 0.85);
 			display: inline-block;
 			line-height: 1em;
 			margin-left: 0.75em;
