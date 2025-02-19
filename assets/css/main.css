@@ -2701,10 +2701,6 @@ input, select, textarea {
 				padding-top: 0;
 			}
 
-			#main > section#one {
-				font-size: 20pt;
-			}
-
 /* Poptrox */
 
 	@-moz-keyframes spin {
@@ -3035,6 +3031,10 @@ input, select, textarea {
 				max-width: none;
 				padding: 6em 3em 3em 3em;
 				width: calc(100% - 30%);
+			}
+			
+			#main > section#one {
+				font-size: 16pt;
 			}
 
 	}
