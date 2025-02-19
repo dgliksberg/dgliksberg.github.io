@@ -2986,7 +2986,7 @@ input, select, textarea {
 		/* Basic */
 
 			body, input, select, textarea {
-				font-size: 16pt;
+				font-size: 12pt;
 			}
 
 	}
@@ -3032,7 +3032,7 @@ input, select, textarea {
 				padding: 6em 3em 3em 3em;
 				width: calc(100% - 30%);
 			}
-			
+
 			#main > section#one {
 				font-size: 16pt;
 			}
