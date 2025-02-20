@@ -776,6 +776,10 @@ input, select, textarea {
 							padding-top: 5em;
 						}
 
+				.row > .subtitle {
+					height: 5em;
+				}
+
 		}
 
 		@media screen and (max-width: 1280px) {
@@ -1020,6 +1024,10 @@ input, select, textarea {
 						.row.gtr-200.gtr-uniform > * {
 							padding-top: 4em;
 						}
+				
+				.row > .subtitle {
+					height: 4em;
+				}
 
 		}
 
@@ -1264,6 +1272,10 @@ input, select, textarea {
 
 						.row.gtr-200.gtr-uniform > * {
 							padding-top: 4em;
+						}
+
+						.row > .subtitle {
+							height: 4em;
 						}
 
 		}
@@ -1511,6 +1523,10 @@ input, select, textarea {
 							padding-top: 3em;
 						}
 
+					.row > .subtitle {
+						height: 3em;
+					}
+
 		}
 
 		@media screen and (max-width: 480px) {
@@ -1755,6 +1771,10 @@ input, select, textarea {
 						.row.gtr-200.gtr-uniform > * {
 							padding-top: 3em;
 						}
+
+					.row > .subtitle {
+						height: 3em;
+					}
 
 		}
 
@@ -2991,10 +3011,7 @@ input, select, textarea {
 
 		/* Main */
 
-		#main #two .row > .subtitle {
-			min-height: 4em;
-			height: 5em;
-		}
+
 
 	}
 
@@ -3044,11 +3061,7 @@ input, select, textarea {
 				font-size: 1em;
 			}
 
-			#main #two .row > .subtitle {
-				min-height: 4em;
-				height: 4em;
-				
-			}
+
 
 	}
 
@@ -3132,10 +3145,6 @@ input, select, textarea {
 				width: 100%;
 			}
 
-			#main #two .row > .subtitle {
-				min-height: 4em;
-				height: 4em;
-			}
 
 	}
 
@@ -3203,11 +3212,7 @@ input, select, textarea {
 					margin: 2.25em 0 0 0;
 					padding: 2.25em 0 0 0;
 				}
-			
-				#main #two .row > .subtitle {
-					min-height: 4em;
-					height: 4em;
-				}
+
 
 		/* Poptrox */
 
@@ -3248,9 +3253,6 @@ input, select, textarea {
 
 		/* Main */
 
-			#main #two .row > .subtitle {
-				min-height: 4em;
-				height: 4em;
-			}
+
 
 	}
