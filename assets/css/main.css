@@ -2989,6 +2989,12 @@ input, select, textarea {
 				font-size: 1.25em;
 			}
 
+		/* Main */
+
+		#main .subtitle {
+			height: calc(4 * 1.25em)
+		}
+
 	}
 
 /* Large */
@@ -3035,6 +3041,10 @@ input, select, textarea {
 
 			#main > section#one + section#two {
 				font-size: 1em;
+			}
+
+			#main .subtitle {
+				height: calc(4 * 1em)
 			}
 
 	}
@@ -3119,6 +3129,10 @@ input, select, textarea {
 				width: 100%;
 			}
 
+			#main .subtitle {
+				height: calc(4 * 1em)
+			}
+
 	}
 
 /* Small */
@@ -3184,6 +3198,10 @@ input, select, textarea {
 				#main > section {
 					margin: 2.25em 0 0 0;
 					padding: 2.25em 0 0 0;
+				}
+			
+				#main .subtitle {
+					height: calc(4 * 1em)
 				}
 
 		/* Poptrox */
