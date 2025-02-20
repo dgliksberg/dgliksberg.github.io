@@ -2991,7 +2991,7 @@ input, select, textarea {
 
 		/* Main */
 
-		#main .subtitle {
+		#main #two .row > .subtitle {
 			height: calc(4 * 1.25em)
 		}
 
@@ -3043,8 +3043,8 @@ input, select, textarea {
 				font-size: 1em;
 			}
 
-			#main .subtitle {
-				height: calc(4 * 1em)
+			#main #two .row > .subtitle {
+				height: 4em
 			}
 
 	}
@@ -3129,8 +3129,8 @@ input, select, textarea {
 				width: 100%;
 			}
 
-			#main .subtitle {
-				height: calc(4 * 1em)
+			#main #two .row > .subtitle {
+				height: 4em
 			}
 
 	}
@@ -3200,8 +3200,8 @@ input, select, textarea {
 					padding: 2.25em 0 0 0;
 				}
 			
-				#main .subtitle {
-					height: calc(4 * 1em)
+				#main #two .row > .subtitle {
+					height: 4em
 				}
 
 		/* Poptrox */
@@ -3239,6 +3239,12 @@ input, select, textarea {
 				line-height: 2.25em;
 				margin-left: 0;
 				padding-left: 0;
+			}
+
+		/* Main */
+
+			#main #two .row > .subtitle {
+				height: 4em;
 			}
 
 	}
