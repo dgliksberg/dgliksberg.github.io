@@ -3008,11 +3008,16 @@ input, select, textarea {
 			body, input, select, textarea {
 				font-size: 1.25em;
 			}
+		
+		/* Header */
 
+			#header h1 {
+				line-height: 1.25em;
+				padding-bottom: 0.75em;
+			}
+			
 		/* Main */
-
-
-
+		
 	}
 
 /* Large */
@@ -3028,6 +3033,7 @@ input, select, textarea {
 
 				#header h1 {
 					font-size: 1.25em;
+					/* line-height: 1.75em; */
 				}
 
 					#header h1 br {
