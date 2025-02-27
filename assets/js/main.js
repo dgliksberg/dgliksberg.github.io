@@ -96,8 +96,7 @@
 
 		// Lightbox gallery.
 			$window.on('load', function() {
-			/*
-				$('#two').poptrox({
+				$('#Content').poptrox({
 					caption: function($a) { return $a.next('.caption').text(); },
 					overlayColor: '#2c2c2c',
 					overlayOpacity: 0.85,
@@ -110,7 +109,6 @@
 					usePopupNav: true,
 					windowMargin: (breakpoints.active('<=small') ? 0 : 50)
 				});
-			*/
 			});
 
 })(jQuery);

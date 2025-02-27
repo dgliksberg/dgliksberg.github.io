@@ -1814,6 +1814,10 @@ input, select, textarea {
 		font-size: 2em;
 	}
 
+	header.minor h2 {
+		font-size: 1.5em;
+	}
+
 /* Form */
 
 	form {
