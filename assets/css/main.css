@@ -98,7 +98,7 @@ input, select, textarea {
 		}
 
 	body, input, select, textarea {
-		color: #a2a2a2;
+		color: #787878;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 16pt;
 		font-weight: 400;
@@ -3118,11 +3118,11 @@ input, select, textarea {
 
 			#footer {
 				background-attachment: scroll;
-				background-color: #1f1815;
-				background-image: url("images/overlay.png"), url("../../images/MacG\ Campus\ River\ Square.jpg");
-				background-position: top left,						bottom center;
-				background-repeat: repeat,							no-repeat;
-				background-size: auto,							cover;
+				background-color: #305595;
+				background-image: url("../../images/MacG\ Campus\ River\ Square.jpg");
+				background-position: bottom left;
+				background-repeat: no-repeat;
+				background-size: cover;
 				bottom: auto;
 				left: auto;
 				padding: 4em 4em 6em 4em;
