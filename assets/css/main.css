@@ -3125,11 +3125,6 @@ input, select, textarea {
 			}
 
 		/* Header */
-
-			#header.portfolioItem {
-				display: none;
-			}
-
 			#smallHeader {
 				display: -moz-flex;
 				display: -webkit-flex;
@@ -3160,7 +3155,7 @@ input, select, textarea {
 				display: block;
 			}
 
-			/* #header {
+			#header {
 				background-attachment: scroll;
 				background-position: top left, center center;
 				background-size: auto,		cover;
@@ -3179,7 +3174,12 @@ input, select, textarea {
 
 					#header h1 br {
 						display: inline;
-					} */
+					}
+
+					
+			#header.portfolioItem {
+				display: none;
+			}
 
 		/* Footer */
 
