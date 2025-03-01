@@ -2616,7 +2616,7 @@ input, select, textarea {
 		-ms-justify-content: space-between;
 		justify-content: space-between;
 		background-color: #305595;
-		background-attachment: scroll;
+		background-attachment: fixed;
 		background-image: url("/images/Bridge View 2 Cropped.jpg");
 		background-position: left bottom;
 		background-repeat: no-repeat;
