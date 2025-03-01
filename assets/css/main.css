@@ -2617,7 +2617,7 @@ input, select, textarea {
 		justify-content: space-between;
 		background-color: #305595;
 		background-attachment: scroll,								scroll;
-		background-image: url("images/overlay 80.png"), url("/images/Bridge View 2 Cropped.jpg");
+		background-image: url("/images/Bridge View 2 Cropped.jpg");
 		background-position: top left,							bottom left;
 		background-repeat: repeat,								no-repeat;
 		background-size: auto,								150%;
@@ -2667,6 +2667,39 @@ input, select, textarea {
 			margin: 0 0 1em 0;
 			width: 6.25em;
 		}
+
+/* Small Header */
+
+	#smallHeader {
+		display: none;
+		background-color: #305595;
+		background-image: none;
+		color: rgb(255, 255, 255, 0.9);
+		height: 100%;
+		left: 0;
+		padding: 2em 4em;
+		position: fixed;
+		text-align: right;
+		top: 0;
+		width: 35%;
+	}
+
+		#smallHeader > * {
+			-moz-flex-shrink: 0;
+			-webkit-flex-shrink: 0;
+			-ms-flex-shrink: 0;
+			flex-shrink: 0;
+			width: 100%;
+		}
+
+		#smallHeader > .inner {
+			-moz-flex-grow: 1;
+			-webkit-flex-grow: 1;
+			-ms-flex-grow: 1;
+			flex-grow: 1;
+			margin: 0 0 2em 0;
+		}
+
 
 /* Footer */
 
@@ -3094,6 +3127,40 @@ input, select, textarea {
 		/* Header */
 
 			#header {
+				display: none;
+			}
+
+			#smallHeader {
+				display: -moz-flex;
+				display: -webkit-flex;
+				display: -ms-flex;
+				display: flex;
+				-moz-flex-direction: column;
+				-webkit-flex-direction: column;
+				-ms-flex-direction: column;
+				flex-direction: column;
+				-moz-align-items: -moz-flex-end;
+				-webkit-align-items: -webkit-flex-end;
+				-ms-align-items: -ms-flex-end;
+				align-items: flex-end;
+				-moz-justify-content: space-between;
+				-webkit-justify-content: space-between;
+				-ms-justify-content: space-between;
+				justify-content: space-between;
+
+				background-attachment: scroll;
+				background-position: top left, center center;
+				background-size: auto,		cover;
+				left: auto;
+				padding: 6em 4em;
+				position: relative;
+				text-align: center;
+				top: auto;
+				width: 100%;
+				display: block;
+			}
+
+			/* #header {
 				background-attachment: scroll;
 				background-position: top left, center center;
 				background-size: auto,		cover;
@@ -3112,7 +3179,7 @@ input, select, textarea {
 
 					#header h1 br {
 						display: inline;
-					}
+					} */
 
 		/* Footer */
 
