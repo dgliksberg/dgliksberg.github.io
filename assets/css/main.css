@@ -3126,7 +3126,7 @@ input, select, textarea {
 
 		/* Header */
 
-			#header {
+			#header.portfolioItem {
 				display: none;
 			}
 
