@@ -35,10 +35,10 @@
 				<!-- Intro -->
 					<section id="one">
 						<header class="major">
-							<h2>3D Printed Cycloidal Drive</h2>
+							<h2>Cycloidal Drive Class Project</h2>
 						</header>
-						<p>In the summer of 2024, I designed and manufactured my own version of a functional <a href="https://en.wikipedia.org/wiki/Cycloidal_drive">Cycloidal Drive</a>. This was partly an exercise in designing a precise mechanism with 3D printing in mind, but I also plan to use this design in future projects.</p>
-						<!-- <p>Elaboration</p> -->
+						<p>For one of my classes in Fall 2024, I was given the opportunity to use my Cycloidal Drive design I created the summer before as the subject for a class project</p>
+						<p>The goal of the project was to take professional-grade measurements and produce a professional-grade poster and paper, and I chose the backlash of my cycloidal drive design as my topic.</p>
 						<!-- <ul class="actions">
 							<li><a href="/" class="button">Back</a></li>
 						</ul> -->
@@ -47,51 +47,84 @@
 				<!-- Content -->
 					<section id="Content">
 						<header>
-							<h2>Design</h2>
+							<h2>Project Goal and Planning</h2>
 						</header>
-						<p>I designed my cycloidal drive around off-the-shelf dowel pins that I wanted to use as rollers. I found a <a href="https://blogs.solidworks.com/teacher/2014/07/building-a-cycloidal-drive-with-solidworks.html">very helpful article</a> that provided equations to create the cycloidal disks for the drive. I then designed a housing around the disks which fully constrains the motion of the gearbox when attached to a motor. I ensured that there was no plastic-on-plastic sliding contact to increase the lifespan of the drive.</p>
+						<p>Part of the requirements for the project were to choose a subject where I could measure the impact of multiple input parameters. I decided to measure the amount of backlash in my gearbox over time, and with a varying number of direction changes over that time. I wanted to see whether (a) the backlash in my drives would increase notable over the course of 5 hours and (b) whether usage patterns would influence that.</p>
+						<p>I decided to redesign my drive for the sake of the class, because I knew I would only be running the drives in for 5 hours. I wanted to maximize any wear that would occur so that I would have better data to show in the end, and to minimize the cost of the drives. I was now getting funding from the university for the project, and because I needed 5 drives for accurate measurements I needed to cut costs to get the project approved.</p>
 						<div class="row">
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/SEVT/Lambdarm.jpg" class="image fit thumb"><img src="images/SEVT/Lambdarm.jpg" alt=""></a>
+								<a href="images/2.671/Housing Input Pins.JPG" class="image fit thumb"><img src="images/2.671/Housing Input Pins.JPG" alt=""></a>
 								<div class = "caption">
-									<h3>Free body diagram of the Lambda-arm design on a whiteboard</h3>
+									<h3>The simplified drive housing, now with fused 'roller pins' instead of metal dowel pins</h3>
 								</div>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/SEVT/Larm Whiteboard.jpg" class="image fit thumb"><img src="images/SEVT/Larm Whiteboard.jpg" alt=""></a>
+								<a href="images/2.671/Backdriving.MOV" class="image fit thumb"><img src="images/2.671/Backdriving.MOV" alt=""></a>
 								<div class = "caption">
-									<h3>Dimensioned drawing of the L-Arm design on a whiteboard</h3>
+									<h3>Because I had the funding for higher quality bearings, the new drive design is backdrivable</h3>
+								</div>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/2.671/Printbed Layout 2.JPG" class="image fit thumb"><img src="images/2.671/Printbed Layout 2.JPG" alt=""></a>
+								<div class = "caption">
+									<h3>The first layer of a print for the drives</h3>
+								</div>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/2.671/CAD Internals Top-down.PNG" class="image fit thumb"><img src="images/2.671/CAD Internals Top-down.PNG" alt=""></a>
+								<div class = "caption">
+									<h3>The updated CAD model, with the rollers now fused to the housing</h3>
 								</div>
 							</article>
 						</div>
 
 						<header>
-							<h2>Manufacturing and Assembly</h2>
+							<h2>Electronics and Data-Taking</h2>
 						</header>
-						<p>While the off-the-shelf components were in the mail, I prepared the 3D-printed components for printing and fine-tuned my print settings for a specific makerspace printer. Once the off-the-shelf parts arrived and every custom component was printed, I was able to assemble the drive and control electronics without issues.</p>
+						<p>With all of the drives manufactured, I then moved to the control electronics and the data-taking apparatus. My main concern for the data-taking was running multiple drives at once, because for each set of measurements every drive had to be run for an hour. I wanted to do this in as many batches as possible for the sake of my sanity, but I only ended up being able to run two drives at once thanks to time constraints and current limits for the beadboard I was using. I also had issues coding an Arduino to be able to run several motors with asynchronous movement patterns, and two motors pushed the limits of reasonable complexity for a class project not focused on programming.</p>
+						<p>I also had to design a jig to attach sensors to the drive. I decided to measure the backlash in each drive by driving them at a constant speed while changing directions at a fixed frequency, and using the time delay between the input and output shafts changing directions to calculate the backlash of the drives. This meant I needed a hig that I could disconnect and reconnect to any of my drives at will, and that allowed for a rotation sensor to be attached to both the input and output shafts of the drives. In practice, I did this with a 3D printed clamp that held te sensors in place, and a betlt between the input shaft and its sensor.</p>
 						<div class="row">
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/Cycloidal/Cycloidal Bearings Housing.JPG" class="image fit thumb"><img src="images/Cycloidal/Cycloidal Bearings Housing.JPG" alt=""></a>
+								<a href="images/2.671/Paper electronics view.JPG" class="image fit thumb"><img src="images/2.671/Paper electronics view.JPG" alt=""></a>
 								<div class = "caption">
-									<h3>The housing of the cycloidal drive with integrated bearings</h3>
+									<h3>The control electronics used to run the cycloidal drives</h3>
 								</div>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/Cycloidal/Cycloidal Internals View 1.JPG" class="image fit thumb"><img src="images/Cycloidal/Cycloidal Internals View 1.JPG" alt=""></a>
+								<a href="images/2.671/Full contron electronics Wide view.JPG" class="image fit thumb"><img src="images/2.671/Full contron electronics Wide view.JPG" alt=""></a>
 								<div class = "caption">
-									<h3>The internal mechanism of the cycloidal drive</h3>
+									<h3>Another view of the control electronics, with the power switch</h3>
 								</div>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/Cycloidal/Cycloidal Open Motion Rotated.MOV" class="image fit thumb"><img src="images/Cycloidal/Cycloidal Open Motion Rotated.MOV" alt=""></a>
+								<a href="images/2.671/Cad Measurement Jig 2.jpg" class="image fit thumb"><img src="images/2.671/Cad Measurement Jig 2.jpg" alt=""></a>
 								<div class = "caption">
-									<h3>A video of the internal mechanism of the cycloidal drive, hand-operated</h3>
+									<h3>The CAD model for the data-taking jig</h3>
 								</div>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/Cycloidal/Cycloidal Closed Motion.MOV" class="image fit thumb"><img src="images/Cycloidal/Cycloidal Closed Motion.MOV" alt=""></a>
+								<a href="images/2.671/Full measurement setup Front.JPG" class="image fit thumb"><img src="images/2.671/Full measurement setup Front.JPG" alt=""></a>
 								<div class = "caption">
-									<h3>The final drive powered via NEMA-17 stepper motor</h3>
+									<h3>The completed data-taking jig attached to a drive, complete with band-aid fix for a broken clamp</h3>
+								</div>
+							</article>
+						</div>
+
+						<header>
+							<h2>Poster and Paper</h2>
+						</header>
+						<p>With all of my data taken and analysed, I wrote up a paper with my findings and created a poster for a poster session. Now that the paper is submitted and the poster session has passed, both works are considered published.</p>
+						<div class="row">
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/2.671/Th_34_Gliksberg_D_CycloidalDrives-1.png" class="image fit thumb"><img src="images/2.671/Poster Thumb.png" alt=""></a>
+								<div class = "caption">
+									<h3>My final poster for the class</h3>
+								</div>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/2.671/Full contron electronics Wide view.JPG" class="image fit thumb"><img src="images/2.671/Full contron electronics Wide view.JPG" alt=""></a>
+								<div class = "caption">
+									<h3>My final paper for the class</h3>
 								</div>
 							</article>
 						</div>
