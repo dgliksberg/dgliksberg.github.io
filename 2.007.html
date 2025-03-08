@@ -38,7 +38,7 @@
 							<h2>Class Competition Robot: Gurt</h2>
 						</header>
 						<p>For one of my classes in Spring 2024, I was tasked with designing and manufacturing a robot to compete on a large game board in a livestreamed competition.</p>
-						<p>I ended up as a quarterfinalist, and I scored the most points out of any fully-manual robot in the competition.</p>
+						<p>I ended up as a quarterfinalist, one of the 'Elite Eight,' out of a class of 170 people, and I scored the most points out of any fully-manual robot in the competition.</p>
 						<!-- <ul class="actions">
 							<li><a href="/" class="button">Back</a></li>
 						</ul> -->
@@ -46,92 +46,112 @@
 
 				<!-- Content -->
 					<section id="Content">
+
+
 						<header>
 							<h2>Project Goal and Planning</h2>
 						</header>
-						<p>Part of the requirements for the project were to choose a subject where I could measure the impact of multiple input parameters. I decided to measure the amount of backlash in my gearbox over time, and with a varying number of direction changes over that time. I wanted to see whether (a) the backlash in my drives would increase notable over the course of 5 hours and (b) whether usage patterns would influence that.</p>
-						<p>I decided to redesign my drive for the sake of the class, because I knew I would only be running the drives in for 5 hours. I wanted to maximize any wear that would occur so that I would have better data to show in the end, and to minimize the cost of the drives. I was now getting funding from the university for the project, and because I needed 5 drives for accurate measurements I needed to cut costs to get the project approved.</p>
+						<p>When the game board for the semester was revealed, and I looked into plans of action and what I would score given the time limit. Out of all of the options for point scoring, I decided to pick acryllic rods from a rack, tilt the pendulum at the center of the game board for a multiplier, and turn the crank of a self-powered elevator. I knew I could re-use the lift mechanism from the pendulum for the rack if I designed it right, so I only needed 2 large systems and one small system on top of a wheelbase. I verified that all of this was possible based on some early weight estimates and data sheets for the available motors, along with cardboard mock-ups of the subsystems.</p>
 						<div class="row">
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/2.671/Housing Input Pins.JPG" class="image fit thumb"><img src="images/2.671/Housing Input Pins.JPG" alt=""></a>
+								<a href="images/2.007/Cardboard Scissor Lift.JPG" class="image fit thumb"><img src="images/2.007/Cardboard Scissor Lift.JPG" alt=""></a>
 								<div class = "caption">
-									<h3>The simplified drive housing, now with fused 'roller pins' instead of metal dowel pins</h3>
+									<h3>The cardboard mock-up of the scissor lift, next to the rack of acryllic rods</h3>
 								</div>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/2.671/Backdriving.MOV" class="image fit thumb"><img src="images/2.671/Backdriving.MOV" alt=""></a>
+								<a href="images/2.007/Notebook.jpg" class="image fit thumb"><img src="images/2.007/Notebook.jpg" alt=""></a>
 								<div class = "caption">
-									<h3>Because I had the funding for higher quality bearings, the new drive design is backdrivable</h3>
-								</div>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/2.671/Printbed Layout 2.JPG" class="image fit thumb"><img src="images/2.671/Printbed Layout 2.JPG" alt=""></a>
-								<div class = "caption">
-									<h3>The first layer of a print for the drives</h3>
-								</div>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/2.671/CAD Internals Top-down.PNG" class="image fit thumb"><img src="images/2.671/CAD Internals Top-down.PNG" alt=""></a>
-								<div class = "caption">
-									<h3>The updated CAD model, with the rollers now fused to the housing</h3>
+									<h3>Part of the notebook I planned out my robot in</h3>
 								</div>
 							</article>
 						</div>
 
 						<header>
-							<h2>Electronics and Data-Taking</h2>
+							<h2>Subsystem Design</h2>
 						</header>
-						<p>With all of the drives manufactured, I then moved to the control electronics and the data-taking apparatus. My main concern for the data-taking was running multiple drives at once, because for each set of measurements every drive had to be run for an hour. I wanted to do this in as many batches as possible for the sake of my sanity, but I only ended up being able to run two drives at once thanks to time constraints and current limits for the beadboard I was using. I also had issues coding an Arduino to be able to run several motors with asynchronous movement patterns, and two motors pushed the limits of reasonable complexity for a class project not focused on programming.</p>
-						<p>I also had to design a jig to attach sensors to the drive. I decided to measure the backlash in each drive by driving them at a constant speed while changing directions at a fixed frequency, and using the time delay between the input and output shafts changing directions to calculate the backlash of the drives. This meant I needed a hig that I could disconnect and reconnect to any of my drives at will, and that allowed for a rotation sensor to be attached to both the input and output shafts of the drives. In practice, I did this with a 3D printed clamp that held te sensors in place, and a betlt between the input shaft and its sensor.</p>
+						<p>I decided on a scissor lift powered by a lead screw for the lift and the rods. I made a spring-loaded grabber for the acryllc rods, with its servo embedded in the top of the scissor lift. I then worked on what I called the 'windmill,' which I designed to fit tightly around the outside bumps on the crank wheel of the elevator, and was powered via chain and sprocket by two motors. I finished the robot with a chassis that I re-enforced with custom c-channels with cable management holes. Each subsystem of the robot required at least three design revisions, and they all worked very smoothly by the time of the competition.</p>
 						<div class="row">
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/2.671/Paper electronics view.JPG" class="image fit thumb"><img src="images/2.671/Paper electronics view.JPG" alt=""></a>
+								<a href="images/2.007/Scissor Lift Alone.JPG" class="image fit thumb"><img src="images/2.007/Scissor Lift Retracted Thumb.JPG" alt=""></a>
 								<div class = "caption">
-									<h3>The control electronics used to run the cycloidal drives</h3>
+									<h3>The scissor lift subsystem fully retracted</h3>
 								</div>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/2.671/Full contron electronics Wide view.JPG" class="image fit thumb"><img src="images/2.671/Full contron electronics Wide view.JPG" alt=""></a>
+								<a href="images/2.007/Scissor Lift Extended.JPG" class="image fit thumb"><img src="images/2.007/Scissor Lift Extended Thumb.JPG" alt=""></a>
 								<div class = "caption">
-									<h3>Another view of the control electronics, with the power switch</h3>
+									<h3>The scissor lift subsystem fully extended</h3>
 								</div>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/2.671/Cad Measurement Jig 2.jpg" class="image fit thumb"><img src="images/2.671/Cad Measurement Jig 2.jpg" alt=""></a>
+								<a href="images/2.007/Lead Screw Alone.JPG" class="image fit thumb"><img src="images/2.007/Lead Screw Alone.JPG" alt=""></a>
 								<div class = "caption">
-									<h3>The CAD model for the data-taking jig</h3>
+									<h3>The lead screw for the scissor lift</h3>
 								</div>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/2.671/Full measurement setup Front.JPG" class="image fit thumb"><img src="images/2.671/Full measurement setup Front.JPG" alt=""></a>
+								<a href="images/2.007/Grabber 2.JPG" class="image fit thumb"><img src="images/2.007/Grabber 2.JPG" alt=""></a>
 								<div class = "caption">
-									<h3>The completed data-taking jig attached to a drive, complete with band-aid fix for a broken clamp</h3>
+									<h3>The final version of the grabber subsystem</h3>
+								</div>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/2.007/Scissor Lift Grabber Rubber Bands.JPG" class="image fit thumb"><img src="images/2.007/Scissor Lift Grabber Rubber Bands Thumb.JPG" alt=""></a>
+								<div class = "caption">
+									<h3>The grabber subsystem on the scissor lift, now with cross-brace beams</h3>
+								</div>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/2.007/Windmill Sides 2.JPG" class="image fit thumb"><img src="images/2.007/Windmill Sides 2 Thumb.JPG" alt=""></a>
+								<div class = "caption">
+									<h3>Side view of the 'windmill' elevator crank</h3>
+								</div>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/2.007/Base Underside.JPG" class="image fit thumb"><img src="images/2.007/Base Underside Thumb.JPG" alt=""></a>
+								<div class = "caption">
+									<h3>The underside of the robot base</h3>
+								</div>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/2.007/Battery Control Board.JPG" class="image fit thumb"><img src="images/2.007/Battery Control Board.JPG" alt=""></a>
+								<div class = "caption">
+									<h3>The control board and battery for the robot</h3>
 								</div>
 							</article>
 						</div>
 
 						<header>
-							<h2>Poster and Paper</h2>
+							<h2>Final robot and competition results</h2>
 						</header>
-						<p>With all of my data taken and analysed, I wrote up a paper with my findings and created a poster for a poster session. Now that the paper is submitted and the poster session has passed, both works are considered published.</p>
+						<p>My robot, which I named Gurt because I found it funny, ended up perfectly fitting in the maximum starting volume required for the competition. I qualified for the livestreamed competition in the qualifying round, and as a part of the MIT Mechanical Engineering Department's 150-year anniversary I ended up as a quarterfinalist in the competition.</p>
 						<div class="row">
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/2.671/Th_34_Gliksberg_D_CycloidalDrives-1.png" class="image fit thumb"><img src="images/2.671/Poster Thumb.png" alt=""></a>
+								<a href="images/2.007/Gurt View 1.JPG" class="image fit thumb"><img src="images/2.007/Gurt View 1.JPG" alt=""></a>
 								<div class = "caption">
-									<h3>My final poster for the class</h3>
+									<h3>Gurt fully asembled</h3>
 								</div>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/2.671/Paper First Page.jpg" class="image fit thumb"><img src="images/2.671/Paper Thumb.jpg" alt=""></a>
+								<a href="images/2.007/Underside View 3.JPG" class="image fit thumb"><img src="images/2.007/Underside View 3.JPG" alt=""></a>
 								<div class = "caption">
-									<h3>The first page of my final paper for the class</h3>
+									<h3>Underside of Gurt</h3>
+								</div>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/2.007/Demo Thumb.PNG" class="image fit thumb"><img src="images/2.007/Demo Thumb.PNG" alt=""></a>
+								<div class = "caption">
+									<h3>Demo Video for Gurt</h3>
+								</div>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/thumbs/04.jpg" class="image fit thumb"><img src="images/thumbs/04.jpg" alt=""></a>
+								<div class = "caption">
+									<h3>Recording of competition final round</h3>
 								</div>
 							</article>
 						</div>
-
-						<ul class="actions">
-							<li><a href="/" class="button">Back</a></li>
-						</ul>
 
 					</section>
 					<section id="Contact">
