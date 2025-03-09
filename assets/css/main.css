@@ -2899,6 +2899,7 @@ input, select, textarea {
 			position: absolute;
 			top: 0;
 			width: 50%;
+			/* z-index: 1500; */
 		}
 
 			.poptrox-popup .nav-next:before,
