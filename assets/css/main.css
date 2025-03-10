@@ -2619,7 +2619,7 @@ input, select, textarea {
 		background-image: linear-gradient(#305595, #4174CC, #609DF5), url("/images/Bridge\ View\ 2\ Transparent.jpg");
 		background-position: top left,							bottom left;
 		background-repeat: repeat,								no-repeat;
-		background-size: auto,								150%;
+		background-size: auto,								cover;
 		color: rgb(255, 255, 255, 0.9);
 		height: 100%;
 		left: 0;
