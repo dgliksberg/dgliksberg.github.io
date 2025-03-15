@@ -37,8 +37,8 @@
 						<header class="major">
 							<h2>Cycloidal Drive Class Project</h2>
 						</header>
-						<p>For one of my classes in Fall 2024, I was given the opportunity to use my Cycloidal Drive design I created the summer before as the subject for a class project.</p>
-						<p>The goal of the project was to take professional-grade measurements and produce a professional-grade poster and paper. I decided to measure the backlash of my cycloidal drive design.</p>
+						<p>For one of my classes in Fall 2024, I was given the opportunity to use the Cycloidal Drive design I created the summer before as the subject for a class project.</p>
+						<p>The goal of the project was to take professional-grade measurements and produce a professional-grade poster and paper. For the project, I decided to measure the backlash of my cycloidal drive design.</p>
 						<!-- <ul class="actions">
 							<li><a href="/" class="button">Back</a></li>
 						</ul> -->
@@ -50,8 +50,8 @@
 						<header>
 							<h2>Strategy and Design</h2>
 						</header>
-						<p>Part of the requirements for the project were to choose a subject where I could measure the impact of multiple input parameters. I decided to measure the amount of backlash in my gearbox over time, and with a varying number of direction changes over that time. I wanted to see whether (a) the backlash in my drives would increase notable over the course of 5 hours and (b) whether usage patterns would influence that.</p>
-						<p>I decided to redesign my drive for the sake of the class, because I knew I would only be running the drives in for 5 hours. I wanted to maximize any wear that would occur so that I would have better data to show in the end, and to minimize the cost of the drives. I was now getting funding from the university for the project, and because I needed 5 drives for accurate measurements I needed to cut costs to get the project approved.</p>
+						<p>Part of the requirements for the project were to choose a subject where I could measure the impact of multiple input parameters. I decided to measure the amount of backlash in my gearbox over time, and with a varying number of direction changes over that time. I wanted to see whether (a) the backlash in my drives would increase notably over the course of 5 hours and (b) whether usage patterns would influence that increase.</p>
+						<p>I decided to redesign my drive for the sake of the class, because I knew I would only be running the drives for 5 hours each. I wanted to maximize any wear that would occur so that I would have better data to show in the end, and to minimize the cost of the drives. I was now getting funding from the university for the project, and because I needed 5 drives for accurate measurements I needed to cut costs to get the project approved.</p>
 						<div class="row">
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/2.671/Housing Input Pins.JPG" class="image fit thumb"><img src="images/2.671/Housing Input Pins.JPG" alt=""></a>
@@ -82,8 +82,8 @@
 						<header>
 							<h2>Electronics and Data-Taking</h2>
 						</header>
-						<p>With all of the drives manufactured, I then moved to the control electronics and the data-taking apparatus. My main concern for the data-taking was running multiple drives at once, because for each set of measurements every drive had to be run for an hour. I wanted to do this in as many batches as possible for the sake of my sanity, but I only ended up being able to run two drives at once thanks to time constraints and current limits for the beadboard I was using. I also had issues coding an Arduino to be able to run several motors with asynchronous movement patterns, and two motors pushed the limits of reasonable complexity for a class project not focused on programming.</p>
-						<p>I also had to design a jig to attach sensors to the drive. I decided to measure the backlash in each drive by driving them at a constant speed while changing directions at a fixed frequency, and using the time delay between the input and output shafts changing directions to calculate the backlash of the drives. This meant I needed a hig that I could disconnect and reconnect to any of my drives at will, and that allowed for a rotation sensor to be attached to both the input and output shafts of the drives. In practice, I did this with a 3D printed clamp that held te sensors in place, and a betlt between the input shaft and its sensor.</p>
+						<p>With all of the drives manufactured, I then moved to the control electronics and the data-taking apparatus. My main concern for the data-taking was running multiple drives at once, because for each set of measurements every drive had to be run for an hour. I wanted to do this in as many batches as possible for the sake of my sanity, but I only ended up being able to run two drives at once thanks to time constraints and current limits for the breadboard I was using. I also had issues coding a single-threaded Arduino to run several motors asychronously, and two motors pushed the limits of reasonable complexity for a class project not focused on programming.</p>
+						<p>I also had to design a jig to attach sensors to each drive. I decided to measure the backlash in each drive by driving them at a constant speed while changing directions at a fixed frequency, and using the time delay between the input and output shafts changing directions to calculate the backlash of the drives. This meant I needed a jig that I could disconnect and reconnect to any of my drives at will, and that held sensors in place for both the input and output shafts of the drives. In practice, I did this with a 3D printed clamp that held the sensors in place, and a belt between the input shaft and its sensor.</p>
 						<div class="row">
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/2.671/Paper electronics view.JPG" class="image fit thumb"><img src="images/2.671/Paper electronics view.JPG" alt=""></a>
