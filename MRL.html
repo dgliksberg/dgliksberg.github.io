@@ -35,10 +35,10 @@
 				<!-- Intro -->
 					<section id="one">
 						<header class="major">
-							<h2>Soft Robotic Sling</h2>
+							<h2>Custom Spin Coater, High-Resolution Measurement, and Bio-Inspired Actuators</h2>
 						</header>
-						<p>Over the summer of 2024, I interned at the d'Arbeloff Robotics Laboratory. I worked on redesigning the base for a soft robotic sling designed to reduce the manual labor required to reposition and transport those in need of care.</p>
-						<p>The goal of the redesign was to balance the base when it's being hoisted via lift, integrate hook loops that allow for mid-operation rotation, and to significantly reduce the weight of the base.</p>
+						<p>Over the spring, summer, and fall of 2025, I interned at the Mechatronics Research Laboratory. I was tasked with designing a manufacturing method for soft, bio-inspired robotic actuators. The actuators are intended to be used for propulsion in underwater robotics, especially in cases were long periods without maintenance are expected such as microplastics research and cleanup.</p>
+						<p>After the spin coater was completed, the project evolved into testing of actuator samples, and into systems to measure the (very flexible) spun samples non-destrutively and without deformation. The method we settled on was the use of an infrared laser reflected into a sensor.</p>
 						<!-- <ul class="actions">
 							<li><a href="/" class="button">Back</a></li>
 						</ul> -->
@@ -47,73 +47,78 @@
 				<!-- Content -->
 					<section id="Content">
 						<header>
-							<h2>Redesign and CAD</h2>
+							<h2>Spin Coater</h2>
 						</header>
-						<p>I started this project by fully modelling the base in CAD, down to the screw and rubber washer. The CAD would be the main assembly guide for any future intern working on the project, so I wanted it to be as accurate as possible to the physical system. The previous iteration did have a cad model, but because I redesigned so many components I decided to re-make it from scratch.</p>
-						<p>The first new components I designed for the base were the hook loops. In operation, the sling would be extended under the patient, then the lift would be clipped on to the base and sling, then the patient would be lifted. It was important that the sling came out of the base straight, so the base needed to be able to pivot while suspended to stay in line with the sling. I designed the hook loops in such a way that the weight of the patient on the sling would do this alignment automatically.</p>
-						<p>Another benefit of modelling every component of the system was that I could get a much better center of mass estimate. I used this to ensure that the center of mass of the base would be perfectly centered between the two hook loops.</p>
-						<p>I then used a simplified version of the system to perform Finite Element Analysis. I needed to ensure that none of the 3D printed parts would break, and that the base would not have any issues when brought to operating pressure.</p>
+						<p>This project started with the design of a custom spin coater. The initial goal for the system was to manufacture sheets of silicone very repeatably, and I determined that the best wayt to accomplish this was to spin the uncured silicone at a high RPM, a process known as spin coating. From there, the silicone would cure and be removed from the coater for use in soft robotic actuators.</p>
+						<p>The mechanical design of the spin coater is somewhat straightforward: the motor of the spin coater is directly connected to the spin plate via a series of adapters. The plate itself is held in place via a light friction fit to pins on an adapter, which is sufficient given the masses and expected spin speeds. This also allows for the easy removal of spin plates, which allows for batches of samples to be made without waiting for them to cure in the machine individually.</p>
+						<p>The motor chosen was a REV NEO 550 with a SPARK MAX motor controller, chosen because of my familiarity with the REV Robotics ecosystem. The velocity control PID parameters were encoded in the motor controller firmware, but extra effort was required to send setpoint commands from a regular Arduino instead of an in-ecosystem microcontroller. This was done via CAN Bus, and allows for arbitrary velocity profiles over time.</p>
 						<div class="row">
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/d'Arbeloff/Sling CAD.png" class="image fit thumb"><img src="images/d'Arbeloff/Sling CAD.png" alt=""></a>
+								<a href="images/MRL/Spin Coater.JPG" class="image fit thumb"><img src="images/MRL/Spin Coater.JPG" alt=""></a>
 								<div class = "caption">
-									<h3>The full CAD model for the sling base</h3>
+									<h3>The completed spin coater.</h3>
 								</div>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/d'Arbeloff/FEA.png" class="image fit thumb"><img src="images/d'Arbeloff/FEA.png" alt=""></a>
+								<a href="images/MRL/Spin Coater Disassembled.JPG" class="image fit thumb"><img src="images/MRL/Spin Coater Disassembled.JPG" alt=""></a>
 								<div class = "caption">
-									<h3>Safety Factor results from FEA performed on a simplified CAD model</h3>
+									<h3>The completed spin coater, disassembled to show the motor, motor controller, Arduino, and CAN Bus connection.</h3>
+								</div>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/MRL/SPin Coater No Plate.JPG" class="image fit thumb"><img src="images/MRL/SPin Coater No Plate.JPG" alt=""></a>
+								<div class = "caption">
+									<h3>The completed spin coater, without the spin plate to demonstrate the method of attachment (friction-fit pins and an O-ring to ensure even contact).</h3>
+								</div>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="https://www.youtube.com/watch?v=4lV5qVmve8k" data-poptrox="youtube" class="image fit thumb"><img src="images/MRL/Spin Coater Thumb.png" alt=""></a>
+								<div class = "caption">
+									<h3>A video demonstration of the completed spin coater.</h3>
 								</div>
 							</article>
 						</div>
 
 						<header>
-							<h2>Printing and Manufacturing</h2>
+							<h2>Soft, Bio-Inspired Robotic Actuators</h2>
 						</header>
-						<p>I designed all of the plastic components with 3D printing in mind, so all of the 3D printing went smoothly. The only major consideration in this application was layer orientation to maximize the structural strength of the prints. The combinaton hook loop and motor housing, for example, was printed in 3 parts to make sure that layer orientations were optimized.</p>
-						<p>The metal manufacturing, however, was a more involved endeavor. The base had 3 aluminum components: two end plates and a large box tube extrusion that would be turned into the main body. The tube in particular was a unique challenge because of its size and this being my first time machining a component that required CNC.</p>
-						<p>After the base itself was completed, I designed control electronics that would allow for remote controlled, battery-powered operation of the sling.</p>
+						<p>After the spin coater was completed, I transitioned work towards manufacturing actuator samples for testing. I cannot go into too much detail, because this work is not yet published, but the fine details of the actuator designs were refined until they could achieve motion consistently.</p>
 						<div class="row">
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/d'Arbeloff/Motor Housing.JPG" class="image fit thumb"><img src="images/d'Arbeloff/Motor Housing.JPG" alt=""></a>
+								<a href="images/MRL/Actuator.jpg" class="image fit thumb"><img src="images/MRL/Actuator.jpg" alt=""></a>
 								<div class = "caption">
-									<h3>The combination hook loop and motor housing</h3>
+									<h3>An example actuator, fully assembled.</h3>
 								</div>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/d'Arbeloff/Bearing End Cap.JPG" class="image fit thumb"><img src="images/d'Arbeloff/End Cap Thumb.JPG" alt=""></a>
+								<a href="images/MRL/Actuator Test Stand.jpg" class="image fit thumb"><img src="images/MRL/Actuator Test Stand.jpg" alt=""></a>
 								<div class = "caption">
-									<h3>The other hook loop, complete with machined aluminum end plate, bearing mount, and t-slot extrusion connectors</h3>
-								</div>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/d'Arbeloff/Tube in vise 1.JPG" class="image fit thumb"><img src="images/d'Arbeloff/Tube in vise 1.JPG" alt=""></a>
-								<div class = "caption">
-									<h3>The main body tube mid-machining in a CNC mill</h3>
-								</div>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/d'Arbeloff/Finished tube.JPG" class="image fit thumb"><img src="images/d'Arbeloff/Finished tube.JPG" alt=""></a>
-								<div class = "caption">
-									<h3>The completed main body tube</h3>
-								</div>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/d'Arbeloff/Control electronics 1.JPG" class="image fit thumb"><img src="images/d'Arbeloff/Control electronics 1.JPG" alt=""></a>
-								<div class = "caption">
-									<h3>The final battery-powered control electronics for the base</h3>
-								</div>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/d'Arbeloff/Base 1.JPG" class="image fit thumb"><img src="images/d'Arbeloff/Base 1.JPG" alt=""></a>
-								<div class = "caption">
-									<h3>The final base, with the sling detached</h3>
+									<h3>An image of the testing apparatus for the actuators.</h3>
 								</div>
 							</article>
 						</div>
-						<p>Unfortunately, because of copyright concerns, I cannot show the final sling in action.</p>
 
+						<header>
+							<h2>Optical Measurement System</h2>
+						</header>
+						<p>After I has made a few test samples of the actuator, my PI and I came to the conclusion that we needed a more robust way to measure the thickness of samples generated by the spin coater. Up until then, I had been using a pair of calipers, which was not ideal given how flexible the silicone sheets were. They would deform too much during measurement, and the accuracy suffered.</p>
+						<p>We decided on implementing an optical measurement system that integrates with the spin coater, with a goal resolution of 10 microns to match that of the calipers. This system would bounce an IR laser off of the sample to measure its thickness. Once again, this project is a component of an unreleased paper, so for the time being I am unable to go into further detail.</p>
+
+						<div class="row">
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/MRL/Meas System.JPG" class="image fit thumb"><img src="images/MRL/Meas System.JPG" alt=""></a>
+								<div class = "caption">
+									<h3>The full spin coater, with the integrated measurement setup.</h3>
+								</div>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/MRL/FinalOptical.JPG" class="image fit thumb"><img src="images/MRL/FinalOptical.JPG" alt=""></a>
+								<div class = "caption">
+									<h3>A close up of the optical measurement setup, showing the laser diode, sensor, and funnel used to operate the system without getting silicone on the optical equipment.</h3>
+								</div>
+							</article>
+						</div>
+					
 						<ul class="actions">
 							<li><a href="/" class="button">Back</a></li>
 						</ul>
