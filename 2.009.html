@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Daniel Gliksberg</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="icon" type="image/x-icon" href="/images/blue_sun_circle_favicon.ico">
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header" class="portfolioItem">
+				<div class="inner">
+					<a href="/" class="image avatar"><img src="images/Zoomed OUt Headshot.jpg" alt="" /></a>
+					<h1><strong>Daniel Gliksberg</strong></h1>
+					<h1>Senior&nbsp@&nbspMIT</h1>
+					<h1>Mechanical Engineering</h1>
+					<!-- <h1>Control, Instrumentation, &&nbspRobotics</h1> -->
+				</div>
+			</header>
+		<!-- Small Header-->
+			<header id = "smallHeader">
+				<div class="inner">
+				</div>
+			</header>
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="one">
+						<header class="major">
+							<h2>CPR Machine: Heart Bridge</h2>
+						</header>
+						<p>For my capstone class in Fall 2025, I was a leading member of a team who took it upon ourselves to design a CPR machine that bystanders could safely use in an emergency situation.</p>
+						<p>This CPR Machine, tentatively named Heart Bridge, is innovatively designed to be safe in the hands of bystanders, rather than requiring professional medical training. We are applying for a provisional patent early in 2026, with the goal of bringing Heart Bridge to market in order to make our CPR device commonly available.</p>
+						<!-- <ul class="actions">
+							<li><a href="/" class="button">Back</a></li>
+						</ul> -->
+					</section>	
+
+				<!-- Content -->
+					<section id="Content">
+                        <header>
+                            <h2>Ideation</h2>
+                        </header>
+                        <p>The first month or so of the class was dedicated to finding an idea for a innovative product based on our own market research, prototyping, and user interviews. At the end of this process, we settled on a CPR device for bystanders to use. We found that existing CPR devices, such as the Stryker LUCAS or the Zoll AutoPulse, were targeted at trained medical professionals as a way to free up hands, and that there was not a device on the market aimed at improving bystander CPR. Survival rates after a cardiac event decrease by about 10% every minute without CPR, but bystanders cannot keep good compressions for more than three minutes. We wanted to create a device that would be safe and easy to use for bystanders, and that would improve the quality of CPR being administered in emergency situations to the level professionals can achieve.</p>
+                        <p>Our first prototype was a demonstration of our idea to solve this problem. Existing CPR devices brace themselves against the patient, which requires repositioning to slide the device under the patient. This requires training to be done safely, especially in cardiac events where people not on the ground of their own volution may have spinal injuries. Our idea was to have the device be held in place by the body weight of two bystanders, so no repositioning is required. This first prototype showed that structure, along with a mock actuator and end effector to demonstrate the expected behavior of the device.</p>
+                        <p>As lead of the actuator subteam, I led the design decisions that resulted in our choice of actuation method (more detail later) and designed the mock actuator model for our demonstration.</p>
+
+                        <div class="row">
+                            <article class="col-6 col-12-xsmall work-item">
+								<a href="images/2.009/M3 Actuator.JPG" class="image fit thumb"><img src="images/2.009/M3 Actuator.JPG" alt=""></a>
+								<div class = "caption">
+									<h3>The mock actuator model for our first prototype, demonstrating our rack and pinion actuation method.</h3>
+								</div>
+							</article>
+                            <article class="col-6 col-12-xsmall work-item">
+								<a href="images/2.009/M3 Device.jpg" class="image fit thumb"><img src="images/2.009/M3 Device.jpg" alt=""></a>
+								<div class = "caption">
+									<h3>A view of the demo actuator mounted to the first prototype frame.</h3>
+								</div>
+							</article>
+						</div>
+
+                        <header>
+                            <h2>Refinement</h2>
+                        </header>
+                        <p>After the proof-of-concept prototype, the actuation subteam began work on an actuator that would meet our design requirements for professional-level CPR. We needed to be able to apply a maximum 500 N of force, with failsafes to ensure we never go past that limit; be able to perform compressions at 107 bpm, the recommendation in literature for mechanical CPR; compress to a depth of 5 cm from the surface of the chest; run for 30 minutes continuously; and take less than 10 seconds total to start automatic compressions after manual ones are stopped.</p>
+                        <p>We chose a rack and pinion with a geared-down input, because we found that we could get the necessary force and speed out of off-the-shelf components while keeping the system linear for easy control. At this stage of the process, I led the electromechanical design of the actuator, including the selection of components, simulation of the system statically via ANSYS FEA and dynamically via Simulink/MATLAB, design of mechanism-critical components, and design of the integration between the frame and actuator. I also wrote the majority of the codebase for the motor controller and the framework for integration with the human-machine interaction subteam's code. The codebase and the Simulink/Matlab work can be found in the project's Github repository <a href="https://github.com/Jack-p-hammer/2.009-Green-Team">here</a>. The final codebase is on the 'final' branch, and the Simulink/MATLAB work is in the 'M4' folder.</p>
+
+                        <div class="row">
+                            <article class="col-6 col-12-xsmall work-item">
+								<a href="images/2.009/MATLAB.png" class="image fit thumb"><img src="images/2.009/MATLAB.png" alt=""></a>
+								<div class = "caption">
+									<h3>MATLAB plots used to analyse performance of control system. Left shows Nyquist plot of controlled system, right shows Bode plot of open-loop system (top) and continuous-time and discrete-time controllers overlaid (bottom).</h3>
+								</div>
+							</article>  
+                            <article class="col-6 col-12-xsmall work-item">
+								<a href="images/2.009/Simulink.png" class="image fit thumb"><img src="images/2.009/Simulink.png" alt=""></a>
+								<div class = "caption">
+									<h3>Simulink output for the actuator given the rack and pinion system and the discrete torque-control system I designed.</h3>
+								</div>
+							</article>                            
+                            <article class="col-6 col-12-xsmall work-item">
+								<a href="images/2.009/Rack Bushing-Plates-Free runner pinion.JPG" class="image fit thumb"><img src="images/2.009/Rack Bushing-Plates-Free runner pinion.JPG" alt=""></a>
+								<div class = "caption">
+									<h3>Main body of the actuator, with sliding bushing for rack, free-running pinion, and waterjet frame plates.</h3>
+								</div>
+							</article>
+                            <article class="col-6 col-12-xsmall work-item">
+								<a href="images/2.009/ANSYS.PNG" class="image fit thumb"><img src="images/2.009/ANSYS.PNG" alt=""></a>
+								<div class = "caption">
+									<h3>ANSYS FEA simulation of the device's structural components under the maximum 500 N load. This shows that the maximum deflection of the actuator is low relative to the motion of the end effector (3 mm vs. 5 cm), and could thus be ignored.</h3>
+								</div>
+							</article>
+                            <article class="col-6 col-12-xsmall work-item">
+								<a href="images/2.009/M4 Actuator.JPG" class="image fit thumb"><img src="images/2.009/M4 Actuator.JPG" alt=""></a>
+								<div class = "caption">
+									<h3>Another actuator prototype, this time with the final motor, gearbox, and rack & pinion system.</h3>
+								</div>
+							</article>
+                            <article class="col-6 col-12-xsmall work-item">
+								<a href="images/2.009/Final Actuator.png" class="image fit thumb"><img src="images/2.009/Final Actuator.png" alt=""></a>
+								<div class = "caption">
+									<h3>Cross-sectional view of the actuator, showing the rack & pinion system.</h3>
+								</div>
+							</article>
+						</div>
+
+                        <header>
+                            <h2>Presentation Device</h2>
+                        </header>
+                        <p>At the end of the semester, the final task for the actuation team was to integrate the existing electronics and code for the motor controller with the electronics and code for the screen and user interface. In the end, we made it all work, but we significantly underestimated the time we would spend troubleshooting the integration. By this point of the semester, I had transition fully towards being the electrical lead for the team, now that the mechanical design work for the actuator was done. I was responsible for keeping track of the electrical integration between human-machine interface and the motor controller, and soldered most of the electrical connections. From there, it was just a jigsaw puzzle to fit everything in the outer enclosure.This was also the point in the semester that we settled on the name Heart Bridge for the device.</p>
+                        <p>In the end, we were able to meet all of the design constraints we set out for ourselves, except for the 10 second time between end of manual compressions and start of automatic compressions. Unfortunately, we did not have time to tune our homing routine enough before the end of the semester. We plan to continue this project in the future, however, and this is one of the improvements we will make.</p>
+
+                        <div class="row">
+                            <article class="col-6 col-12-xsmall work-item">
+								<a href="images/2.009/No Egg actuator.JPG" class="image fit thumb"><img src="images/2.009/No Egg actuator.JPG" alt=""></a>
+								<div class = "caption">
+									<h3>Our final actuator, with wiring that was not attached to the device's housing</h3>
+								</div>
+							</article>  
+                            <article class="col-6 col-12-xsmall work-item">
+								<a href="images/2.009/Rat's Nest.JPG" class="image fit thumb"><img src="images/2.009/Rat's Nest.JPG" alt=""></a>
+								<div class = "caption">
+									<h3>View of the inside of Heart Bridge, showing all of the cable routing required for all of the device's functionality.</h3>
+								</div>
+							</article>  
+                            <article class="col-6 col-12-xsmall work-item">
+								<a href="images/2.009/KiCAD Single-Pager.jpg" class="image fit thumb"><img src="images/2.009/KiCAD Single-Pager.jpg" alt=""></a>
+								<div class = "caption">
+									<h3>Single-page circuit schematic for Heart Bridge, made at the request of a teammate. An up-to-date, multi-page version is available <a href="https://github.com/Jack-p-hammer/2.009-Green-Team/blob/main/M6/CPR%20Machine%20Schematic/CPR%20Machine%20Schematic.pdf">here</a>.</h3>
+								</div>
+							</article>  
+                            <article class="col-6 col-12-xsmall work-item">
+								<a href="images/2.009/Heart Bridge No BG.png" class="image fit thumb"><img src="images/2.009/Heart Bridge No BG.png" alt=""></a>
+								<div class = "caption">
+									<h3>The final Heart Bridge device, with all components integrated.</h3>
+								</div>
+							</article>   
+                            <article class="col-6 col-12-xsmall work-item">
+								<a href="images/2.009/Bench.jpg" class="image fit thumb"><img src="images/2.009/Bench.jpg" alt=""></a>
+								<div class = "caption">
+									<h3>We decided on a storage bench as an example of a storage location for a public place.</h3>
+								</div>
+							</article>  
+                            <article class="col-6 col-12-xsmall work-item">
+								<a href="https://youtu.be/TY7GQ8qs31w" data-poptrox="youtube" class="image fit thumb"><img src="images/2.009/Final presentation thumb.jpg" alt=""></a>
+								<div class = "caption">
+									<h3>Our livestreamed final presentation, demonstrating Heart Bridge in action.</h3>
+								</div>
+							</article>                       
+						</div>
+
+                        <header>
+                            <h2>Next Steps & Reflection</h2>
+                        </header>
+                        <p>My team and I have decided to pursue this project into the future, and plan to continue development of the device and to pursue a provisional patent in early 2026. I believe that Heart Bridge has the potential to help thousands of people, especially if we reach a level of availability matching AEDs.</p>
+                        <p>If I were to start the project over again with the knowledge I have now, I would have pushed for our team to decide on an idea to pursue earlier so that we would have been less crunched for time when we were developing the actual CPR device. A lot of the compromises we made (which we will fix going forward) were caused primarily by time constraints.</p>
+
+
+                    <ul class="actions">
+                        <li><a href="/" class="button">Back</a></li>
+                    </ul>
+					</section>
+					<section id="Contact">
+							<div class="col-4 col-12-small">
+								<ul class="labeled-icons">
+									<li>
+										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
+										Cambridge, MA
+									</li>
+									<li>
+										<h3 class="icon solid fa-mobile-alt"><span class="label">Phone</span></h3>
+										617-784-0066
+									</li>
+									<li>
+										<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
+										<a href="mailto:danielgliksberg@gmail.com">danielgliksberg@gmail.com</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/daniel-gliksberg-669803196/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/dgliksberg" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<!-- <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li> -->
+						<li><a href="mailto:danielgliksberg@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Daniel Gliksberg</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
